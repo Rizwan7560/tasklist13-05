@@ -1,0 +1,37 @@
+https://extraordinary-honesty-easier.w3spaces.com/variablechanging.html (console)
+
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Dynamic Variable Type Demo</h2>
+  <p id="output"></p>
+
+  <script>
+    let dynamicVar = "I'm a string";  // Starts as a string
+    let output = document.getElementById("output");
+
+    output.innerHTML += `Initial value: <strong>${dynamicVar}</strong> (Type: ${typeof dynamicVar})<br>`;
+
+    dynamicVar = 42;  // Now a number
+    output.innerHTML += `Changed to number: <strong>${dynamicVar}</strong> (Type: ${typeof dynamicVar})<br>`;
+
+    dynamicVar = true;  // Now a boolean
+    output.innerHTML += `Changed to boolean: <strong>${dynamicVar}</strong> (Type: ${typeof dynamicVar})<br>`;
+
+    dynamicVar = { name: "Alice", age: 30 };  // Now an object
+    output.innerHTML += `Changed to object: <strong>${JSON.stringify(dynamicVar)}</strong> (Type: ${typeof dynamicVar})<br>`;
+
+    dynamicVar = [1, 2, 3];  // Now an array (but 'typeof' says object)
+    output.innerHTML += `Changed to array: <strong>${JSON.stringify(dynamicVar)}</strong> (Type: ${typeof dynamicVar})<br>`;
+
+    dynamicVar = null;  // Now null (but 'typeof' says object)
+    output.innerHTML += `Changed to null: <strong>${dynamicVar}</strong> (Type: ${typeof dynamicVar})<br>`;
+
+    dynamicVar = undefined;  // Now undefined
+    output.innerHTML += `Changed to undefined: <strong>${dynamicVar}</strong> (Type: ${typeof dynamicVar})<br>`;
+
+    dynamicVar = "Back to string";  // Back to string
+    output.innerHTML += `Final value: <strong>${dynamicVar}</strong> (Type: ${typeof dynamicVar})<br>`;
+  </script>
+</body>
+</html>
