@@ -1,0 +1,44 @@
+https://extraordinary-honesty-easier.w3spaces.com/validationform.html (console)
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Number Validation Form</title>
+  <style>
+    .error { color: red; }
+  </style>
+</head>
+<body>
+  <h2>Min-Max Number Validator</h2>
+  <form id="numForm">
+    <label>Minimum: <input type="text" id="min" required></label><br>
+    <label>Maximum: <input type="text" id="max" required></label><br>
+    <button type="submit">Validate</button>
+  </form>
+  <p id="errorMsg" class="error"></p>
+
+  <script>
+    document.getElementById("numForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const min = document.getElementById("min").value;
+      const max = document.getElementById("max").value;
+      const errorMsg = document.getElementById("errorMsg");
+
+      // Check if inputs are numbers
+      if (isNaN(min) || isNaN(max)) {
+        errorMsg.textContent = "Error: Both fields must be numbers!";
+        return;
+      }
+
+      // Check if Min < Max
+      if (parseFloat(min) >= parseFloat(max)) {
+        errorMsg.textContent = "Error: Minimum must be less than Maximum!";
+      } else {
+        errorMsg.textContent = "Validation passed! ✅";
+        errorMsg.style.color = "green";
+      }
+    });
+  </script>
+</body>
+</html>
