@@ -1,0 +1,33 @@
+https://extraordinary-honesty-easier.w3spaces.com/coumpoundASSIGNMENT.html (console)
+
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Compound Operators Demo</h2>
+  <p id="result"></p>
+
+  <script>
+    let num = 10;
+    let result = document.getElementById("result");
+
+    result.innerHTML += `Initial value: <strong>${num}</strong><br>`;
+
+    num += 5;  // num = num + 5 → 15
+    result.innerHTML += `After += 5: <strong>${num}</strong><br>`;
+
+    num -= 3;  // num = num - 3 → 12
+    result.innerHTML += `After -= 3: <strong>${num}</strong><br>`;
+
+    num *= 2;  // num = num * 2 → 24
+    result.innerHTML += `After *= 2: <strong>${num}</strong><br>`;
+
+    num /= 4;  // num = num / 4 → 6
+    result.innerHTML += `After /= 4: <strong>${num}</strong><br>`;
+
+    // Bonus: String concatenation with +=
+    let text = "Hello";
+    text += " World!";
+    result.innerHTML += `String += example: <strong>${text}</strong><br>`;
+  </script>
+</body>
+</html>
