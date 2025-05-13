@@ -1,0 +1,111 @@
+https://extraordinary-honesty-easier.w3spaces.com/colourslider.html  (console)
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RGB Color Slider</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            transition: background-color 0.3s;
+        }
+        .slider-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+        }
+        .slider {
+            width: 100%;
+            margin: 15px 0;
+        }
+        .color-value {
+            font-weight: bold;
+        }
+        #colorBox {
+            width: 100px;
+            height: 100px;
+            margin: 20px auto;
+            border: 2px solid #333;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <h1>RGB Color Mixer</h1>
+        
+        <div>
+            <label for="red">Red:</label>
+            <input type="range" id="red" class="slider" min="0" max="255" value="128">
+            <span id="redValue" class="color-value">128</span>
+        </div>
+        
+        <div>
+            <label for="green">Green:</label>
+            <input type="range" id="green" class="slider" min="0" max="255" value="128">
+            <span id="greenValue" class="color-value">128</span>
+        </div>
+        
+        <div>
+            <label for="blue">Blue:</label>
+            <input type="range" id="blue" class="slider" min="0" max="255" value="128">
+            <span id="blueValue" class="color-value">128</span>
+        </div>
+        
+        <div id="colorBox"></div>
+        
+        <p>Current Color: <span id="rgbValue">rgb(128, 128, 128)</span></p>
+    </div>
+
+    <script>
+        // Get all slider elements
+        const redSlider = document.getElementById('red');
+        const greenSlider = document.getElementById('green');
+        const blueSlider = document.getElementById('blue');
+        
+        // Get all value display elements
+        const redValue = document.getElementById('redValue');
+        const greenValue = document.getElementById('greenValue');
+        const blueValue = document.getElementById('blueValue');
+        const rgbValue = document.getElementById('rgbValue');
+        const colorBox = document.getElementById('colorBox');
+
+        // Function to update colors
+        function updateColor() {
+            // Get current slider values
+            const r = redSlider.value;
+            const g = greenSlider.value;
+            const b = blueSlider.value;
+            
+            // Update displayed values
+            redValue.textContent = r;
+            greenValue.textContent = g;
+            blueValue.textContent = b;
+            rgbValue.textContent = `rgb(${r}, ${g}, ${b})`;
+            
+            // Create the RGB color string
+            const color = `rgb(${r}, ${g}, ${b})`;
+            
+            // Apply the color to the box and background
+            colorBox.style.backgroundColor = color;
+            document.body.style.backgroundColor = color;
+        }
+
+        // Add event listeners to all sliders
+        redSlider.addEventListener('input', updateColor);
+        greenSlider.addEventListener('input', updateColor);
+        blueSlider.addEventListener('input', updateColor);
+
+        // Initialize the color
+        updateColor();
+    </script>
+</body>
+</html>
